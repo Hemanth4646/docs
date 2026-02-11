@@ -1,0 +1,11 @@
+{
+  "name": "docs",
+  "scripts": {
+    "dev": "mintlify dev",
+    "build": "mintlify build",
+    "start": "mintlify start"
+  },
+  "dependencies": {
+    "mintlify": "latest"
+  }
+}
