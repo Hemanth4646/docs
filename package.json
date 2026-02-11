@@ -1,11 +1,8 @@
 {
   "name": "docs",
-  "scripts": {
-    "dev": "mintlify dev",
-    "build": "npx mintlify build",
-    "start": "mintlify start"
-  },
-  "dependencies": {
-    "mintlify": "latest"
-  }
+"scripts": {
+  "dev": "mintlify dev",
+  "build": "npx mintlify build",
+  "start": "mintlify start"
+ }
 }
