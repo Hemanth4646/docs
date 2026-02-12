@@ -113,7 +113,7 @@
       "anchors": [
         {
           "anchor": "Support Server",
-          "href": "https://discord.gg/synq",
+          "href": "https://discord.gg/synqlabs",
           "icon": "discord"
         },
         {
@@ -132,7 +132,7 @@
     "links": [
       {
         "label": "Support Server",
-        "href": "https://discord.gg/synq"
+        "href": "https://discord.gg/synqlabs"
       }
     ],
     "primary": {
@@ -141,12 +141,9 @@
       "href": "https://discord.com/oauth2/authorize"
     }
   },
-  "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "perplexity"]
-  },
   "footer": {
     "socials": {
-      "discord": "https://discord.gg/synq",
+      "discord": "https://discord.gg/synqlabs",
       "github": "https://github.com"
     }
   }
