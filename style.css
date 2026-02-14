@@ -1,0 +1,12 @@
+/* Hide the dark/light mode toggle in the topbar */
+button[aria-label*="dark"],
+button[aria-label*="light"],
+button[aria-label*="mode"],
+button[aria-label*="theme"],
+button[aria-label*="Switch"],
+[data-theme-toggle],
+[data-color-mode-toggle],
+[class*="theme-toggle"],
+[class*="color-mode"] {
+  display: none !important;
+}
