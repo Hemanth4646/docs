@@ -98,7 +98,7 @@
             "pages": ["Utility & Info/utility", "Utility & Info/information"]
           }
         ]
-      },
+      }
     ],
     "global": {
       "anchors": [
@@ -109,7 +109,7 @@
         },
         {
           "anchor": "Invite Bot",
-          "href": "https://discord.com/oauth2/authorize",
+          "href": "https://discord.com/oauth2/authorize?client_id=1452307918899904564",
           "icon": "plus"
         }
       ]
@@ -129,7 +129,7 @@
     "primary": {
       "type": "button",
       "label": "Invite Bot",
-      "href": "https://discord.com/oauth2/authorize"
+      "href": "https://discord.com/oauth2/authorize?client_id=1452307918899904564"
     }
   },
   "footer": {
