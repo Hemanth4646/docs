@@ -99,15 +99,6 @@
           }
         ]
       },
-      {
-        "tab": "Developer",
-        "groups": [
-          {
-            "group": "Owner commands",
-            "pages": ["Developer/developer"]
-          }
-        ]
-      }
     ],
     "global": {
       "anchors": [
