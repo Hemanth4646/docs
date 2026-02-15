@@ -1,14 +1,22 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "SYNQ Bot",
+  "name": "Synq Documentation",
   "description": "Complete command documentation for SYNQ Bot",
+
+  "appearance": {
+  "default": "dark",
+  "toggle": true
+},
+
   "colors": {
     "primary": "#5865F2",
     "light": "#7289DA",
     "dark": "#4752C4"
   },
-  "favicon": "/favicon.svg",
+
+  "favicon": "logo/synq.png",
+
   "navigation": {
     "tabs": [
       {
@@ -26,11 +34,11 @@
           {
             "group": "Setup",
             "pages": [
-              "commands/invite-welcome",
-              "commands/autorole",
-              "commands/greet",
-              "commands/jointocreate",
-              "commands/customise"
+              "Configuration/invite-welcome",
+              "Configuration/autorole",
+              "Configuration/greet",
+              "Configuration/jointocreate",
+              "Configuration/customise"
             ]
           }
         ]
@@ -41,10 +49,10 @@
           {
             "group": "Stats & leaderboards",
             "pages": [
-              "commands/messages-voice",
-              "commands/invites",
-              "commands/leaderboard",
-              "commands/add-remove-reset"
+              "Tracking/messages-voice",
+              "Tracking/invites",
+              "Tracking/leaderboard",
+              "Tracking/add-remove-reset"
             ]
           }
         ]
@@ -54,7 +62,7 @@
         "groups": [
           {
             "group": "Moderation commands",
-            "pages": ["commands/moderation"]
+            "pages": ["Moderation/moderation"]
           }
         ]
       },
@@ -64,11 +72,11 @@
           {
             "group": "Giveaways & tools",
             "pages": [
-              "commands/giveaway",
-              "commands/boostrole",
-              "commands/embed",
-              "commands/reminder",
-              "commands/timer"
+              "Engagement/giveaway",
+              "Engagement/boostrole",
+              "Engagement/embed",
+              "Engagement/reminder",
+              "Engagement/timer"
             ]
           }
         ]
@@ -79,13 +87,13 @@
           {
             "group": "Automation",
             "pages": [
-              "commands/autoresponder",
-              "commands/customrole",
-              "commands/guildtag",
-              "commands/vanityrole",
-              "commands/sticky",
-              "commands/ticket",
-              "commands/welcome"
+              "Automation/autoresponder",
+              "Automation/customrole",
+              "Automation/guildtag",
+              "Automation/vanityrole",
+              "Automation/sticky",
+              "Automation/ticket",
+              "Automation/welcome"
             ]
           }
         ]
@@ -95,11 +103,22 @@
         "groups": [
           {
             "group": "Commands",
+<<<<<<< HEAD
             "pages": ["commands/utility", "commands/information"]
           }
         ]
       },
+=======
+            "pages": [
+              "Utility & Info/utility",
+              "Utility & Info/information"
+            ]
+          }
+        ]
+      }
+>>>>>>> d4c0bc0863539cf06555b2900f799ce4e17ded53
     ],
+
     "global": {
       "anchors": [
         {
@@ -109,20 +128,25 @@
         },
         {
           "anchor": "Invite Bot",
-          "href": "https://discord.com/oauth2/authorize",
+          "href": "https://discord.com/oauth2/authorize?client_id=1452307918899904564",
           "icon": "plus"
         }
       ]
     }
   },
+
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg" 
-    "appearance": {
+  
+   "light": "/logo/synq-light.png",
+    "dark": "/logo/synq1.png",
+     "appearance": {
     "default": "dark",
     "strict": true
   },
+    "height": 68,
+    "href": "/"
   },
+
   "navbar": {
     "links": [
       {
@@ -133,9 +157,10 @@
     "primary": {
       "type": "button",
       "label": "Invite Bot",
-      "href": "https://discord.com/oauth2/authorize"
+      "href": "https://discord.com/oauth2/authorize?client_id=1452307918899904564"
     }
   },
+
   "footer": {
     "socials": {
       "discord": "https://discord.gg/synqlabs",
