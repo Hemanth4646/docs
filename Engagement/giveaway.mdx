@@ -1,118 +1,356 @@
 ---
 title: Giveaway
-description: Create, manage, and run giveaways in your server.
+description: "Easily create events where members can win prizes."
+icon: party-horn
 ---
 
-## gstart
+<Warning>
+  All giveaway commands require **Elite** premium tier.
+</Warning>
 
-Starts a new giveaway.
+## Starting a Giveaway
 
-**Syntax:** `gstart <duration> <winners> <prize> [channel]`  
-**Aliases:** `giveawaystart`, `gcreate`  
-**Premium:** Elite
+You can start a giveaway with the `gstart` command.
 
-**Example:** `gstart 1h 2 Nitro Boost`
-
----
-
-## gend
-
-End an active giveaway early.
-
-**Syntax:** `gend <message_id>`  
-**Aliases:** `giveawayend`  
-**Premium:** Elite
-
-**Example:** `gend 1461440639311806724`
-
----
-
-## greroll
-
-Reroll a giveaway to select new winners.
-
-**Syntax:** `greroll <message_id> [winner_count]`  
-**Aliases:** `giveawayreroll`  
-**Premium:** Elite
-
-**Example:** `greroll 1461440639311806724 2`
+<CodeGroup>
+```javascript Syntax
+,gstart <duration> <winners> <prize> [channel]
+```
+```javascript Example
+,gstart 1h 2 Nitro Boost
+,gstart 24h 1 Nitro Boost #giveaways
+```
+</CodeGroup>
+<br />
+<Frame>
+    <img src="/images/miscellaneous/giveaway/start.png" />
+</Frame>
 
 ---
 
-## gsetup
+## Editing a Giveaway
 
-Configure default giveaway settings.
+You can edit an active giveaway with the `gedit` command.
 
-**Syntax:** `gsetup <subcommand> [arguments]`  
-**Aliases:** `giveawaysetup`  
-**Premium:** Elite
+<AccordionGroup>
+    <Accordion title="Changing the host">
+        Use the `gedit host` command to change the giveaway host.
 
-| Subcommand | Syntax | Example |
-|------------|--------|---------|
-| thumbnail | `gsetup thumbnail <url or attachment>` | `gsetup thumbnail https://example.com/image.png` |
-| image | `gsetup image <url or attachment>` | `gsetup image https://example.com/giveaway.png` |
-| color | `gsetup color <hex code>` | `gsetup color #FF5733` |
-| emoji | `gsetup emoji <emoji>` | `gsetup emoji 🎉` |
-| reset | `gsetup reset` | `gsetup reset` |
-| view | `gsetup view` | `gsetup view` |
+        <CodeGroup>
+```javascript Syntax
+        ,gedit host <message_id> <@user|userId>
+```
+```javascript Example
+        ,gedit host 1461440639311806724 @newhost
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Changing the prize">
+        Use the `gedit prize` command to change the giveaway prize.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gedit prize <message_id> <prize>
+```
+```javascript Example
+        ,gedit prize 1461440639311806724 Nitro
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Changing the duration">
+        Use the `gedit duration` command to change the duration of the giveaway.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gedit duration <message_id> <time>
+```
+```javascript Example
+        ,gedit duration 1461440639311806724 7d
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Changing the thumbnail">
+        Use the `gedit thumbnail` command to change the giveaway thumbnail.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gedit thumbnail <message_id> <url>
+```
+```javascript Example
+        ,gedit thumbnail 1461440639311806724 https://example.com/image.png
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Changing the image">
+        Use the `gedit image` command to change the giveaway image.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gedit image <message_id> <url>
+```
+```javascript Example
+        ,gedit image 1461440639311806724 https://example.com/banner.png
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Changing the color">
+        Use the `gedit color` command to change the embed color of the giveaway.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gedit color <message_id> <hex code>
+```
+```javascript Example
+        ,gedit color 1461440639311806724 #ffffff
+```
+        </CodeGroup>
+    </Accordion>
+</AccordionGroup>
 
 ---
 
-## gedit
+## Default Giveaway Setup
 
-Edit active giveaway settings.
+You can configure default settings for all giveaways with the `gsetup` command.
 
-**Syntax:** `gedit <subcommand> <message_id> <value>`  
-**Aliases:** `giveawayedit`  
-**Premium:** Elite
+<AccordionGroup>
+    <Accordion title="Setting a default thumbnail">
+        Use the `gsetup thumbnail` command to set the default thumbnail for all giveaways.
 
-| Subcommand | Syntax | Example |
-|------------|--------|---------|
-| thumbnail | `gedit thumbnail <message_id> <url>` | `gedit thumbnail 1461440639311806724 https://example.com/image.png` |
-| image | `gedit image <message_id> <url>` | `gedit image 1461440639311806724 https://example.com/banner.png` |
-| color | `gedit color <message_id> <hex code>` | `gedit color 1461440639311806724 #ffffff` |
-| host | `gedit host <message_id> <@user\|userId>` | `gedit host 1461440639311806724 @newhost` |
-| duration | `gedit duration <message_id> <time>` | `gedit duration 1461440639311806724 7d` |
-| prize | `gedit prize <message_id> <prize>` | `gedit prize 1461440639311806724 Nitro` |
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup thumbnail <url or attachment>
+```
+```javascript Example
+        ,gsetup thumbnail https://example.com/image.png
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Setting a default image">
+        Use the `gsetup image` command to set the default main image for all giveaways.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup image <url or attachment>
+```
+```javascript Example
+        ,gsetup image https://example.com/giveaway.png
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Setting a default color">
+        Use the `gsetup color` command to set the default embed color for all giveaways.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup color <hex code>
+```
+```javascript Example
+        ,gsetup color #FF5733
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Setting a default emoji">
+        Use the `gsetup emoji` command to set the default emoji for all giveaways.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup emoji <emoji>
+```
+```javascript Example
+        ,gsetup emoji 🎉
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Viewing current setup">
+        Use the `gsetup view` command to view all current default giveaway settings.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup view
+```
+```javascript Example
+        ,gsetup view
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Resetting setup to default">
+        Use the `gsetup reset` command to reset all giveaway settings back to default.
+
+        <Warning>This will remove all your configured default settings.</Warning>
+
+        <CodeGroup>
+```javascript Syntax
+        ,gsetup reset
+```
+```javascript Example
+        ,gsetup reset
+```
+        </CodeGroup>
+    </Accordion>
+</AccordionGroup>
 
 ---
 
-## gmanager
+## Ending a Giveaway
 
-Manage the giveaway manager role.
+You can end a giveaway early with the `gend` command.
 
-**Syntax:** `gmanager <subcommand> [@role]`  
-**Aliases:** `giveawaymanager`, `gmanage`  
-**Premium:** Elite
-
-| Subcommand | Syntax | Example |
-|------------|--------|---------|
-| set | `gmanager set <@role\|roleid>` | `gmanager set @giveawayManagers` |
-| reset | `gmanager reset` | `gmanager reset` |
-| config | `gmanager config` | `gmanager config` |
-
----
-
-## gban
-
-Ban users or roles from participating in giveaways.
-
-**Syntax:** `gban <subcommand> [target]`  
-**Aliases:** `giveawayban`  
-**Premium:** Elite
-
-| Subcommand | Syntax | Example |
-|------------|--------|---------|
-| add | `gban add <@user\|userId / @role\|roleId>` | `gban add @user` |
-| remove | `gban remove <@user\|userId / @role\|roleId>` | `gban remove @user` |
-| list | `gban list` | `gban list` |
+<CodeGroup>
+```javascript Syntax
+,gend <message_id>
+```
+```javascript Example
+,gend 1461440639311806724
+```
+</CodeGroup>
+<br />
+<Frame>
+    <img src="/images/miscellaneous/giveaway/end.png" />
+</Frame>
 
 ---
 
-## glist
+## Rerolling a Giveaway
 
-Shows all active giveaways in the server.
+You can reroll the winners of a giveaway with the `greroll` command.
 
-**Syntax:** `glist`  
-**Aliases:** `giveawaylist`  
-**Premium:** Elite
+<CodeGroup>
+```javascript Syntax
+,greroll <message_id> [winner_count]
+```
+```javascript Example
+,greroll 1461440639311806724 2
+```
+</CodeGroup>
+<br />
+<Frame>
+    <img src="/images/miscellaneous/giveaway/reroll.png" />
+</Frame>
+
+---
+
+## Giveaway Manager Role
+
+You can manage who has permission to run giveaways using the `gmanager` command.
+
+<AccordionGroup>
+    <Accordion title="Setting the manager role">
+        Use the `gmanager set` command to assign a giveaway manager role.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gmanager set <@role|roleId>
+```
+```javascript Example
+        ,gmanager set @giveawayManagers
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Viewing the current configuration">
+        Use the `gmanager config` command to view the current giveaway manager role configuration.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gmanager config
+```
+```javascript Example
+        ,gmanager config
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Resetting the manager role">
+        Use the `gmanager reset` command to remove the configured giveaway manager role.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gmanager reset
+```
+```javascript Example
+        ,gmanager reset
+```
+        </CodeGroup>
+    </Accordion>
+</AccordionGroup>
+
+---
+
+## Banning Users or Roles
+
+You can ban users or roles from participating in giveaways with the `gban` command.
+
+<AccordionGroup>
+    <Accordion title="Banning a user or role">
+        Use the `gban add` command to ban a user or role from all giveaways.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gban add <@user|userId / @role|roleId>
+```
+```javascript Example
+        ,gban add @user
+        ,gban add @giveawayban
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Removing a ban">
+        Use the `gban remove` command to remove a ban from a user or role.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gban remove <@user|userId / @role|roleId>
+```
+```javascript Example
+        ,gban remove @user
+        ,gban remove @giveawayban
+```
+        </CodeGroup>
+    </Accordion>
+
+    <Accordion title="Viewing the ban list">
+        Use the `gban list` command to view all users and roles currently banned from giveaways.
+
+        <CodeGroup>
+```javascript Syntax
+        ,gban list
+```
+```javascript Example
+        ,gban list
+```
+        </CodeGroup>
+    </Accordion>
+</AccordionGroup>
+
+---
+
+## Viewing all Giveaways
+
+You can view all active giveaways in the server with the `glist` command.
+
+<Info>This will display all currently active giveaways.</Info>
+
+<CodeGroup>
+```javascript Syntax
+,glist
+```
+```javascript Example
+,glist
+```
+</CodeGroup>
+<br />
+<Frame>
+    <img src="/images/miscellaneous/giveaway/list.png" />
+</Frame>
